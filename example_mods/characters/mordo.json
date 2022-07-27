@@ -1,0 +1,83 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-23,
+				-10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "mordecaiidle"
+		},
+		{
+			"offsets": [
+				-29,
+				-13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "mordecaileft"
+		},
+		{
+			"offsets": [
+				-17,
+				-27
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "mordecaidown"
+		},
+		{
+			"offsets": [
+				-17,
+				-15
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "mordecaiup"
+		},
+		{
+			"offsets": [
+				-25,
+				-10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "mordecairight"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Mordecai_roast",
+	"position": [
+		20,
+		-120
+	],
+	"healthbar_colors2": [
+		201,
+		201,
+		201
+	],
+	"healthicon": "mordoandfinn",
+	"flip_x": false,
+	"healthbar_colors": [
+		201,
+		201,
+		201
+	],
+	"camera_position": [
+		-80,
+		-130
+	],
+	"sing_duration": 6.1,
+	"scale": 1.3
+}

@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-9,
+				-2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "mordecaiLEFT"
+		},
+		{
+			"offsets": [
+				-37,
+				-5
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "mordecaiUP"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "mordecaiIDLE"
+		},
+		{
+			"offsets": [
+				-10,
+				-10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "mordecaiRIGHT"
+		},
+		{
+			"offsets": [
+				-37,
+				-13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": true,
+			"name": "mordecaiDOWN"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/mordo johnny",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "mom",
+	"flip_x": false,
+	"healthbar_colors": [
+		216,
+		85,
+		142
+	],
+	"camera_position": [
+		-550,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1.3
+}
