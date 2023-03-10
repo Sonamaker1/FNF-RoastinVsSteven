@@ -1,0 +1,19 @@
+{
+	"girlfriend": [
+		410,
+		-23
+	],
+	"boyfriend": [
+		1368,
+		11
+	],
+	"isPixelStage": false,
+	"opponent": [
+		60,
+		75
+	],
+	"hide_girlfriend": false,
+	"directory": "",
+	"defaultZoom": 0.7,
+        "dynamic_camera": true
+}

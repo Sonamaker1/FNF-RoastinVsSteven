@@ -1,66 +1,71 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				-9,
-				-2
+				41,
+				-8
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "mordecaiLEFT"
-		},
-		{
-			"offsets": [
-				-37,
-				-5
-			],
-			"indices": [],
 			"fps": 24,
-			"anim": "singUP",
-			"loop": false,
-			"name": "mordecaiUP"
+			"name": "mordecaiLEFT",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				-17,
+				8
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "mordecaiUP",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "mordecaiIDLE"
+			"fps": 24,
+			"name": "mordecaiIDLE",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				-10,
+				29,
 				-10
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "mordecaiRIGHT"
+			"fps": 24,
+			"name": "mordecaiRIGHT",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-37,
-				-13
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "singDOWN",
 			"loop": true,
-			"name": "mordecaiDOWN"
+			"offsets": [
+				5,
+				-12
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "mordecaiDOWN",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/mordo johnny",
+	"image": "characters/protest/mordo johnny",
 	"position": [
 		0,
-		300
+		260
+	],
+	"healthbar_colors2": [
+		216,
+		85,
+		142
 	],
 	"healthicon": "mom",
 	"flip_x": false,

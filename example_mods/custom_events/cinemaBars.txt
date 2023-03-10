@@ -1,0 +1,5 @@
+Makes those cool cinema bars. SMOOTHLY
+
+Value 1: True or False
+
+Value 2: Time

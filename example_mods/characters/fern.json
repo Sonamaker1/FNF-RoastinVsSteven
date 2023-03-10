@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				-22,
-				-10
+				9,
+				-13
 			],
 			"loop": false,
 			"fps": 24,
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				-24,
-				-12
+				9,
+				-19
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				-12,
-				-9
+				22,
+				-15
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-18,
-				-10
+				12,
+				-11
 			],
 			"loop": false,
 			"fps": 24,
@@ -46,37 +46,48 @@
 		},
 		{
 			"offsets": [
-				-24,
-				-7
+				7,
+				-13
 			],
 			"loop": false,
 			"fps": 24,
 			"anim": "singRIGHT",
 			"indices": [],
 			"name": "right"
+		},
+		{
+			"offsets": [
+				-133,
+				40
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "dialog",
+			"indices": [],
+			"name": "dialog"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Fern_roast",
+	"image": "characters/moc/Fern_roast",
 	"position": [
-		-190,
-		120
+		-210,
+		135
 	],
 	"healthbar_colors2": [
-		130,
-		174,
-		255
+		105,
+		156,
+		48
 	],
-	"healthicon": "mordoandfinn",
+	"healthicon": "fern",
 	"flip_x": false,
 	"healthbar_colors": [
-		201,
-		201,
-		201
+		105,
+		156,
+		48
 	],
 	"camera_position": [
-		120,
-		-100
+		160,
+		-90
 	],
 	"sing_duration": 6.1,
 	"scale": 1.3

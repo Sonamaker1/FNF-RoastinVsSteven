@@ -84,6 +84,17 @@ class ClientPrefs {
 	public static var badWindow:Int = 135;
 	public static var safeFrames:Float = 10;
 
+	public static var freeplayUnlocked:Bool = false;
+	public static var freeplayMessage:Bool = false;
+
+	public static var pancakesUnlocked:Bool = false;
+	public static var protestUnlocked:Bool = false;
+	public static var nuisanceUnlocked:Bool = false;
+	public static var mocUnlocked:Bool = false;
+	public static var racismUnlocked:Bool = false;
+	public static var starlightUnlocked:Bool = false;
+	public static var flanUnlocked:Bool = false;
+
 	//Every key has two binds, add your key bind down here and then add your control on options/ControlsSubState.hx and Controls.hx
 	public static var keyBinds:Map<String, Array<FlxKey>> = [
 		//Key Bind, Name for ControlsSubState
@@ -617,6 +628,42 @@ class ClientPrefs {
 			controllerMode = FlxG.save.data.controllerMode;
 		}
 
+		if(FlxG.save.data.freeplayUnlocked != null) {
+			freeplayUnlocked = FlxG.save.data.freeplayUnlocked;
+		}
+
+		if(FlxG.save.data.freeplayMessage != null) {
+			freeplayMessage = FlxG.save.data.freeplayMessage;
+		}
+
+		if(FlxG.save.data.pancakesUnlocked != null) {
+			pancakesUnlocked = FlxG.save.data.pancakesUnlocked;
+		}
+
+		if(FlxG.save.data.protestUnlocked != null) {
+			protestUnlocked = FlxG.save.data.protestUnlocked;
+		}
+
+		if(FlxG.save.data.nuisanceUnlocked != null) {
+			nuisanceUnlocked = FlxG.save.data.nuisanceUnlocked;
+		}
+
+		if(FlxG.save.data.mocUnlocked != null) {
+			mocUnlocked = FlxG.save.data.mocUnlocked;
+		}
+
+		if(FlxG.save.data.racismUnlocked != null) {
+			racismUnlocked = FlxG.save.data.racismUnlocked;
+		}
+
+		if(FlxG.save.data.starlightUnlocked != null) {
+			starlightUnlocked = FlxG.save.data.starlightUnlocked;
+		}
+
+		if(FlxG.save.data.flanUnlocked != null) {
+			flanUnlocked = FlxG.save.data.flanUnlocked;
+		}
+
 		if(FlxG.save.data.gameplaySettings != null)
 		{
 			var savedMap:Map<String, Dynamic> = FlxG.save.data.gameplaySettings;
@@ -655,6 +702,27 @@ class ClientPrefs {
 			}
 			reloadControls();
 		}
+	}
+
+	public static function freeplayUnlock()
+	{
+		FlxG.save.data.freeplayUnlocked = freeplayUnlocked;
+		FlxG.save.data.freeplayMessage = freeplayMessage;
+		
+		FlxG.save.flush();
+	}
+
+	public static function songUnlock()
+	{
+		FlxG.save.data.pancakesUnlocked = pancakesUnlocked;
+		FlxG.save.data.protestUnlocked = protestUnlocked;
+		FlxG.save.data.nuisanceUnlocked = nuisanceUnlocked;
+		FlxG.save.data.mocUnlocked = mocUnlocked;
+		FlxG.save.data.racismUnlocked = racismUnlocked;
+		FlxG.save.data.starlightUnlocked = starlightUnlocked;
+		FlxG.save.data.flanUnlocked = flanUnlocked;
+		
+		FlxG.save.flush();
 	}
 
 	inline public static function getGameplaySetting(name:String, defaultValue:Dynamic):Dynamic {

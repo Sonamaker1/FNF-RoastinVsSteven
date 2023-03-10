@@ -1,110 +1,110 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				16,
-				-19
+				112,
+				-92
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "down0",
-			"indices": []
+			"indices": [],
+			"name": "down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				49,
-				-1
+				-6,
+				-26
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "right0",
-			"indices": []
+			"indices": [],
+			"name": "right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				36,
-				-1
+				61,
+				-12
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "left0",
-			"indices": []
+			"indices": [],
+			"name": "left0"
 		},
 		{
+			"offsets": [
+				-1,
+				0
+			],
 			"loop": true,
-			"offsets": [
-				-1,
-				0
-			],
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "idle",
-			"indices": []
+			"indices": [],
+			"name": "idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				21,
-				5
+				-3,
+				80
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "down_miss",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				59,
-				2
-			],
-			"anim": "singRIGHTmiss",
-			"fps": 24,
-			"name": "right_miss",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				0,
-				23
-			],
 			"anim": "singUP",
-			"fps": 24,
-			"name": "up0",
-			"indices": []
+			"indices": [],
+			"name": "up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-1,
-				22
+				112,
+				-92
 			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "down miss"
+		},
+		{
+			"offsets": [
+				-10,
+				-28
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "right miss"
+		},
+		{
+			"offsets": [
+				-5,
+				75
+			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUPmiss",
-			"fps": 24,
-			"name": "up _miss",
-			"indices": []
+			"indices": [],
+			"name": "up miss"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				47,
-				0
+				63,
+				-10
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "left_miss",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "left miss"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/PB_pancakes",
+	"image": "characters/pancakes/pb",
 	"position": [
 		0,
-		-220
+		-210
 	],
 	"healthbar_colors2": [
 		255,
@@ -112,16 +112,16 @@
 		204
 	],
 	"healthicon": "pb",
-	"flip_x": false,
+	"flip_x": true,
 	"healthbar_colors": [
 		255,
 		110,
 		204
 	],
 	"camera_position": [
-		-459,
-		-90
+		200,
+		40
 	],
 	"sing_duration": 6.1,
-	"scale": 0.8
+	"scale": 1.05
 }

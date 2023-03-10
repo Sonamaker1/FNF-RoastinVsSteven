@@ -1,0 +1,5 @@
+Makes the healthBar, score txt and icons fade
+
+Value 1: True or False
+
+Value 2: Time

@@ -154,7 +154,6 @@ class OptionsMenu extends FlxSubState
 				new Shouldcameramove("Moves camera on opponent/player note hits."),
 			]),
 			new OptionCata(345, 40, "Appearance", [
-                new NoteskinOption("Change your current noteskin"),
 				new AccTypeOption("Change your current accuracy type you want!"),
                 new IconBop("Change icon bopping type"),
 				new SongNameOption("Shows to you name of song your playing on HUD"),

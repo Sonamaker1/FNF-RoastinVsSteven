@@ -54,10 +54,65 @@
 			"fps": 24,
 			"name": "right",
 			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-79,
+				-53
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "hehehe",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-76,
+				-48
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "more giggles",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-70,
+				-42
+			],
+			"anim": "im-an-orang",
+			"fps": 24,
+			"name": "hah, im an orange",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				429,
+				2851
+			],
+			"anim": "bye-bye",
+			"fps": 24,
+			"name": "orange is dragged away",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-80,
+				-28
+			],
+			"anim": "take-me-alive",
+			"fps": 24,
+			"name": "theyll never take me alive",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/the orange",
+	"image": "characters/nuisance/the orange",
 	"position": [
 		-80,
 		140

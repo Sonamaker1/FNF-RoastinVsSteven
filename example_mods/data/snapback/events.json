@@ -1,0 +1,81 @@
+{
+	"song": {
+		"speed": 2.5,
+		"stage": "cn_city",
+		"player1": "steven-buff",
+		"player2": "finn-sword",
+		"events": [
+			[
+				23040,
+				[
+					[
+						"Change Scroll Speed",
+						"1.5",
+						"3"
+					]
+				]
+			],
+			[
+				24960,
+				[
+					[
+						"Change Scroll Speed",
+						"1.4",
+						"3"
+					]
+				]
+			],
+			[
+				26880,
+				[
+					[
+						"Change Scroll Speed",
+						"1.4",
+						"3"
+					]
+				]
+			],
+			[
+				51840,
+				[
+					[
+						"",
+						"",
+						"",
+						""
+					]
+				]
+			],
+			[
+				51840,
+				[
+					[
+						"",
+						"",
+						"",
+						""
+					]
+				]
+			],
+			[
+				98820,
+				[
+					[
+						"Play Animation",
+						"showtime",
+						"BF",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "connie",
+		"bpm": 125,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "Snapback"
+	}
+}

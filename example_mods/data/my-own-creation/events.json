@@ -1,0 +1,266 @@
+{
+	"song": {
+		"speed": 3,
+		"stage": "beach",
+		"player1": "finn_fern",
+		"player2": "fern",
+		"events": [
+			[
+				15360,
+				[
+					[
+						"HudDisappear",
+						"False",
+						"0.75",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.7",
+						""
+					]
+				]
+			],
+			[
+				76360,
+				[
+					[
+						"Play Animation",
+						"dialog",
+						"Dad",
+						""
+					]
+				]
+			],
+			[
+				76800,
+				[
+					[
+						"Flash Camera",
+						"1",
+						"",
+						""
+					],
+					[
+						"cinemaBars",
+						"True",
+						"0.2"
+					],
+					[
+						"HudDisappear",
+						"True",
+						"0.3"
+					],
+					[
+						"Camera Follow Pos",
+						"750",
+						"450"
+					],
+					[
+						"NotesDisappear",
+						"True",
+						"0.3"
+					]
+				]
+			],
+			[
+				77356,
+				[
+					[
+						"lyrics",
+						"This bozo keeps saying he's me!",
+						"00ff00, 40",
+						""
+					]
+				]
+			],
+			[
+				79292,
+				[
+					[
+						"lyrics",
+						"Why don't you set em' straight and tell him",
+						"00ff00, 40",
+						null
+					]
+				]
+			],
+			[
+				80475,
+				[
+					[
+						"lyrics",
+						"who the REAL Finn is?",
+						"00ff00, 40",
+						""
+					]
+				]
+			],
+			[
+				81484,
+				[
+					[
+						"Play Animation",
+						"show_us",
+						"GF",
+						""
+					]
+				]
+			],
+			[
+				81648,
+				[
+					[
+						"lyrics",
+						"That one?",
+						"ffff00, 40",
+						null
+					]
+				]
+			],
+			[
+				82650,
+				[
+					[
+						"lyrics",
+						"What?",
+						"00ff00, 40",
+						""
+					]
+				]
+			],
+			[
+				83136,
+				[
+					[
+						"lyrics",
+						"Yeah, I don't know what YOU are.",
+						"ffff00, 40",
+						null
+					]
+				]
+			],
+			[
+				84836,
+				[
+					[
+						"lyrics",
+						"Some kind of demon plant thing, probably.",
+						"ffff00, 40",
+						null
+					]
+				]
+			],
+			[
+				87040,
+				[
+					[
+						"lyrics",
+						"But I-",
+						"00ff00, 40",
+						null
+					]
+				]
+			],
+			[
+				87750,
+				[
+					[
+						"Play Animation",
+						"show_us",
+						"BF",
+						""
+					]
+				]
+			],
+			[
+				87832,
+				[
+					[
+						"lyrics",
+						"Show us your true form, demon!",
+						"ffffff, 40",
+						null
+					]
+				]
+			],
+			[
+				89328,
+				[
+					[
+						"lyrics",
+						"Yeah, show us!",
+						"ffff00, 40",
+						null
+					]
+				]
+			],
+			[
+				90456,
+				[
+					[
+						"lyrics",
+						"SHOW US!",
+						"0000ff, 40",
+						null
+					]
+				]
+			],
+			[
+				91228,
+				[
+					[
+						"lyrics",
+						"SHOW US!",
+						"0000ff, 50",
+						null
+					]
+				]
+			],
+			[
+				92040,
+				[
+					[
+						"lyrics",
+						"",
+						"ffffff, 1",
+						null
+					],
+					[
+						"HudDisappear",
+						"False",
+						"0.2"
+					],
+					[
+						"NotesDisappear",
+						"False",
+						"0.2"
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"cinemaBars",
+						"False",
+						"0.2"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "jake",
+		"bpm": 125,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "My Own Creation"
+	}
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="flan_dance1.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flan dance 10000" x="10" y="10" width="198" height="149" frameX="-1" frameY="-38" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10001" x="10" y="10" width="198" height="149" frameX="-1" frameY="-38" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10002" x="218" y="10" width="200" height="153" frameX="0" frameY="-34" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10003" x="218" y="10" width="200" height="153" frameX="0" frameY="-34" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10004" x="218" y="10" width="200" height="153" frameX="0" frameY="-34" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10005" x="218" y="10" width="200" height="153" frameX="0" frameY="-34" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10006" x="218" y="10" width="200" height="153" frameX="0" frameY="-34" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10007" x="10" y="173" width="140" height="191" frameX="-26" frameY="0" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10008" x="10" y="173" width="140" height="191" frameX="-26" frameY="0" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10009" x="160" y="173" width="150" height="184" frameX="-23" frameY="-5" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10010" x="160" y="173" width="150" height="184" frameX="-23" frameY="-5" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10011" x="160" y="173" width="150" height="184" frameX="-23" frameY="-5" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10012" x="160" y="173" width="150" height="184" frameX="-23" frameY="-5" frameWidth="200" frameHeight="191"/>
+	<SubTexture name="flan dance 10013" x="160" y="173" width="150" height="184" frameX="-23" frameY="-5" frameWidth="200" frameHeight="191"/>
+</TextureAtlas>

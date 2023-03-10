@@ -105,7 +105,12 @@ class ChartingState extends MusicBeatState
 		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
         ['Set Cam Zoom', "Value 1: Cam zoom \n Value 2: if blank, it will smoothly zoom regularly, otherwise it will do an instant zoom."],
-        ['Set Property', "Value 1: Variable name\nValue 2: New value"]
+        ['Set Property', "Value 1: Variable name\nValue 2: New value"],
+		['Roasted Timer Thing', "cool timer thing"],
+		['protest intro', "coolio"],
+		['john', "john imgs, if value 1 is blank then it will take a random image"],
+		['epik lines', "epik lines for Protest"],
+		['Racism Shader Thing', "please don't crash"]
 	];
 
 	var _file:FileReference;

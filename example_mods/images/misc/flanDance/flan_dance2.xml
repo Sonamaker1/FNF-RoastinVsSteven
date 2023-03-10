@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="flan_dance2.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flan dance 20000" x="10" y="10" width="192" height="169" frameX="-24" frameY="-8" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20001" x="10" y="10" width="192" height="169" frameX="-24" frameY="-8" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20002" x="212" y="10" width="183" height="176" frameX="-26" frameY="0" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20003" x="212" y="10" width="183" height="176" frameX="-26" frameY="0" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20004" x="212" y="10" width="183" height="176" frameX="-26" frameY="0" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20005" x="212" y="10" width="183" height="176" frameX="-26" frameY="0" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20006" x="212" y="10" width="183" height="176" frameX="-26" frameY="0" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20007" x="10" y="196" width="175" height="160" frameX="0" frameY="-14" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20008" x="10" y="196" width="175" height="160" frameX="0" frameY="-14" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20009" x="195" y="196" width="175" height="167" frameX="-6" frameY="-9" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20010" x="195" y="196" width="175" height="167" frameX="-6" frameY="-9" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20011" x="195" y="196" width="175" height="167" frameX="-6" frameY="-9" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20012" x="195" y="196" width="175" height="167" frameX="-6" frameY="-9" frameWidth="216" frameHeight="177"/>
+	<SubTexture name="flan dance 20013" x="195" y="196" width="175" height="167" frameX="-6" frameY="-9" frameWidth="216" frameHeight="177"/>
+</TextureAtlas>

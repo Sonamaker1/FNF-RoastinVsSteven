@@ -1,6 +1,6 @@
 {
 	"directory": "johnatan",
-	"defaultZoom": 0.9,
+	"defaultZoom": 0.45,
 	"isPixelStage": false,
 
 	"boyfriend": [770, 900],
@@ -13,5 +13,5 @@
 	"camera_start": [0, 0],
 	"camera_girlfriend": [0, 0],
 	"camera_speed": 1,
-        "cameramovefromnotes": true
+        "dynamic_camera": true
 }

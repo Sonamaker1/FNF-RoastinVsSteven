@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="twiStarlight.png">
+	<!-- Created with Adobe Animate version 20.5.1.31044 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="twi idel0000" x="10" y="10" width="583" height="604" frameX="0" frameY="-50" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0001" x="10" y="10" width="583" height="604" frameX="0" frameY="-50" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0002" x="603" y="10" width="545" height="596" frameX="-20" frameY="-58" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0003" x="603" y="10" width="545" height="596" frameX="-20" frameY="-58" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0004" x="1158" y="10" width="538" height="597" frameX="-32" frameY="-57" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0005" x="1158" y="10" width="538" height="597" frameX="-32" frameY="-57" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0006" x="10" y="624" width="548" height="649" frameX="-22" frameY="-23" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0007" x="10" y="624" width="548" height="649" frameX="-22" frameY="-23" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0008" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0009" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0010" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0011" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0012" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0013" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0014" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0015" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0016" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0017" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0018" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0019" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0020" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0021" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+	<SubTexture name="twi idel0022" x="568" y="624" width="586" height="697" frameX="-22" frameY="0" frameWidth="608" frameHeight="697"/>
+</TextureAtlas>
