@@ -1141,12 +1141,12 @@ class PlayState extends MusicBeatState
 				var clouds1:BGSprite = new BGSprite('stages/beach/clouds-1', -415, -420, 0.2, 0.2);
 				add(clouds1);
 
-				var clouds3:FlxBackdrop = new FlxBackdrop(Paths.image('stages/beach/clouds-2'), 0.35, 0.35, true, false, 100);
+				var clouds3:FlxBackdrop = new FlxBackdrop(Paths.image('stages/beach/clouds-2'), X, 100, 0);
 				clouds3.y = -350;
 				clouds3.velocity.x = -25;
                 add(clouds3);
 
-				var clouds2:FlxBackdrop = new FlxBackdrop(Paths.image('stages/beach/clouds-3'), 0.35, 0.35, true, false, 100);
+				var clouds2:FlxBackdrop = new FlxBackdrop(Paths.image('stages/beach/clouds-3'), X, 100, 0);
 				clouds2.y = -530;
 				clouds2.velocity.x = -20;
                 add(clouds2);
@@ -1814,7 +1814,7 @@ class PlayState extends MusicBeatState
 		cameraEdges.visible = false;
 		add(cameraEdges);
 
-		creditsCard = new FlxBackdrop(Paths.image('misc/songCreditsCard'), 0, 0, true, false, 0);
+		creditsCard = new FlxBackdrop(Paths.image('misc/songCreditsCard'), X, 0, 0);
 		creditsCard.screenCenter(Y);
 		creditsCard.velocity.x = -50;
 		creditsCard.alpha = 0;
@@ -3683,11 +3683,11 @@ class PlayState extends MusicBeatState
 			openChartEditor();
 		}
                 
-		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, Utils.boundTo(1 - (elapsed * 9), 0, 1));
 		iconP1.scale.set(mult, mult);
 		iconP1.updateHitbox();
 
-		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, Utils.boundTo(1 - (elapsed * 9), 0, 1));
 		iconP2.scale.set(mult, mult);
 		iconP2.updateHitbox();
 

@@ -110,14 +110,14 @@ class FreeplayState extends MusicBeatState
 			addSong(songArray[i], 0, 'steven-new', FlxColor.fromRGB(146, 113, 253));
 		}
 
-        bg = new FlxBackdrop(Paths.image('menus/freeplay/fpBG'), 10, 0, true, true);
+        bg = new FlxBackdrop(Paths.image('menus/freeplay/fpBG'), XY, 0, 0);
 		bg.scrollFactor.set(0,0);
 		bg.antialiasing = true;
         bg.velocity.x = FlxG.random.float(-90, 90);
 		bg.velocity.y = FlxG.random.float(-20, 20);
 		add(bg);
 
-		var leftCN:FlxBackdrop = new FlxBackdrop(Paths.image('menus/freeplay/fp-thingie'), 0, 10, false, true);
+		var leftCN:FlxBackdrop = new FlxBackdrop(Paths.image('menus/freeplay/fp-thingie'), Y, 0, 0);
 		leftCN.scrollFactor.set(0,0);
 		leftCN.antialiasing = true;
 		leftCN.x = 444;

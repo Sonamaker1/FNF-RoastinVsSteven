@@ -50,7 +50,7 @@ class ExitGameState extends MusicBeatState
 		#end
 
         var bg:FlxBackdrop;
-        bg = new FlxBackdrop(Paths.image('titleBg'), 10, 0, true, true);
+        bg = new FlxBackdrop(Paths.image('titleBg'), XY, 10, 0);
 	    bg.velocity.x = FlxG.random.float(-90, 90);
 		bg.velocity.y = FlxG.random.float(-20, 20);
 		bg.updateHitbox();
