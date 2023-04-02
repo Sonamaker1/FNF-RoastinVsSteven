@@ -51,7 +51,6 @@ class MainMenuState extends MusicBeatState
 		'MAIN SERIES',
 		'BONUS EPISODES',
 		'CREDITS',
-		//#if !switch 'donate', #end // you can uncomment this if you want - Xale
 		'OPTIONS'
 	];
 
@@ -306,86 +305,86 @@ class MainMenuState extends MusicBeatState
 	}
 
 
-        function select()
-		{
-                if (optionShit[curSelected] == 'donate')
+    function select()
+	{
+            if (optionShit[curSelected] == 'donate')
+			{
+				Utils.browserLoad('https://ninja-muffin24.itch.io/funkin');
+			}
+			else
+			{
+				selectedSomethin = true;
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+                FlxTween.tween(logo, {y : -1100}, 0.5, {
+					ease: FlxEase.quadOut,
+				});
+
+				FlxTween.tween(menuArtBG, {y : 1059}, 0.5, {
+					ease: FlxEase.quadOut,
+				});
+
+                menuArts.forEach(function(spr:FlxSprite)
 				{
-					Utils.browserLoad('https://ninja-muffin24.itch.io/funkin');
-				}
-				else
+					FlxTween.tween(spr, {y : 750}, 0.5, {
+					    ease: FlxEase.quadOut,
+				    });
+				});
+
+				menuItems.forEach(function(spr:FlxSprite)
 				{
-					selectedSomethin = true;
-					FlxG.sound.play(Paths.sound('confirmMenu'));
-                    FlxTween.tween(logo, {y : -1100}, 0.5, {
-						ease: FlxEase.quadOut,
-					});
-
-					FlxTween.tween(menuArtBG, {y : 1059}, 0.5, {
-						ease: FlxEase.quadOut,
-					});
-
-                    menuArts.forEach(function(spr:FlxSprite)
-					{
-						FlxTween.tween(spr, {y : 750}, 0.5, {
-						    ease: FlxEase.quadOut,
-					    });
-					});
-
-					menuItems.forEach(function(spr:FlxSprite)
-					{
-						if (curSelected == spr.ID)
-							{
-								FlxTween.tween(spr, {x : -575}, 0.75, {
-									ease: FlxEase.quadInOut,
-								});					
-							}
-                        if (curSelected != spr.ID)
-							{
-								FlxTween.tween(spr, {alpha: 0}, 0.4, {
-									ease: FlxEase.quadOut,
-									
-								});
-								FlxTween.tween(spr, {x : 850}, 0.55, {
-									ease: FlxEase.quadOut,
-									onComplete: function(twn:FlxTween)
-									{
-										spr.kill();
-									}
-								});					
-							}
-						else
+					if (curSelected == spr.ID)
 						{
-							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
-							{
-								var daChoice:String = optionShit[curSelected];
-
-								switch (daChoice)
-								{
-									case 'MAIN SERIES':
-										MusicBeatState.switchState(new StoryMenuState());
-									case 'BONUS EPISODES':
-										MusicBeatState.switchState(new FreeplayState());
-									#if MODS_ALLOWED
-									case 'mods':
-										MusicBeatState.switchState(new ModsMenuState());
-									#end
-									case 'CREDITS':
-										MusicBeatState.switchState(new CreditsState());
-
-										FlxG.sound.music.stop();
-                                        FlxG.sound.music == null;
-									case 'OPTIONS':
-										//MusicBeatState.switchState(new options.OptionsState());
-										MusicBeatState.switchState(new OptionsDirect());
-
-                                        FreeplayState.destroyFreeplayVocals();
-                                        FlxG.sound.music.stop();
-                                        FlxG.sound.music == null;                      
-								}
-							});
+							FlxTween.tween(spr, {x : -575}, 0.75, {
+								ease: FlxEase.quadInOut,
+							});					
 						}
-					});
-				}
-        }	
+                    if (curSelected != spr.ID)
+						{
+							FlxTween.tween(spr, {alpha: 0}, 0.4, {
+								ease: FlxEase.quadOut,
+								
+							});
+							FlxTween.tween(spr, {x : 850}, 0.55, {
+								ease: FlxEase.quadOut,
+								onComplete: function(twn:FlxTween)
+								{
+									spr.kill();
+								}
+							});					
+						}
+					else
+					{
+						FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
+						{
+							var daChoice:String = optionShit[curSelected];
+
+							switch (daChoice)
+							{
+								case 'MAIN SERIES':
+									MusicBeatState.switchState(new StoryMenuState());
+								case 'BONUS EPISODES':
+									MusicBeatState.switchState(new FreeplayState());
+								#if MODS_ALLOWED
+								case 'mods':
+									MusicBeatState.switchState(new ModsMenuState());
+								#end
+								case 'CREDITS':
+									MusicBeatState.switchState(new CreditsState());
+
+									FlxG.sound.music.stop();
+                                    FlxG.sound.music == null;
+								case 'OPTIONS':
+									//MusicBeatState.switchState(new options.OptionsState());
+									MusicBeatState.switchState(new OptionsDirect());
+
+                                    FreeplayState.destroyFreeplayVocals();
+                                    FlxG.sound.music.stop();
+                                    FlxG.sound.music == null;                      
+							}
+						});
+					}
+				});
+			}
+    }	
 
 }

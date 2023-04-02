@@ -208,8 +208,6 @@ class PlayState extends MusicBeatState
 	public var eventNotes:Array<EventNote> = [];
     public static var currentPState:PlayState;
 
-
-
 	private var strumLine:FlxSprite;
 	public static var swapStrumLines:Bool = false;
 
@@ -538,14 +536,6 @@ class PlayState extends MusicBeatState
 		{
 			filtersnotes.push(BlurNotes); // blur :D - PurSnake
 			filterSUSnotes.push(BlurNotes);
-		}
-
-		var tiltshit:TiltshiftEffect;
-		tiltshit = new TiltshiftEffect(60, 1);
-
-		if(curSong == 'My Own Creation')
-		{
-			filtersgame.push(new ShaderFilter(tiltshit.shader));
 		}
 
         trace(filtershud);
@@ -1807,7 +1797,7 @@ class PlayState extends MusicBeatState
 		vintage.updateHitbox();
 		vintage.screenCenter();
 		vintage.visible = ClientPrefs.vintageOnGame;
-		vintage.alpha = 0.2;
+		vintage.alpha = 0.05;
 		add(vintage);
 
 		rec = new FlxSprite(1000, 100).loadGraphic(Paths.image('misc/racismUI/recShit'));
@@ -3515,10 +3505,7 @@ class PlayState extends MusicBeatState
 		    }  
         }
 
-        if(FlxG.keys.justPressed.F11)
-        {
-            FlxG.fullscreen = !FlxG.fullscreen;
-        }
+        if(FlxG.keys.justPressed.F11) FlxG.fullscreen = !FlxG.fullscreen;
 
 		callOnLuas('onUpdate', [elapsed]);
 		var daSong:String = Paths.formatToSongPath(curSong);
@@ -3696,34 +3683,18 @@ class PlayState extends MusicBeatState
 			openChartEditor();
 		}
                 
-    	switch(ClientPrefs.hliconbop)
-    	   {
-    		case 'Grafex':	
-    		    var iconOffset:Int = 26;
-    
-		        iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01) - iconOffset);
-		        iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
-                
-             case 'Modern':		
-				var mult:Float = FlxMath.lerp(1, iconP1.scale.x, Utils.boundTo(1 - (elapsed * 9), 0, 1));
-				iconP1.scale.set(mult, mult);
-				iconP1.updateHitbox();
+		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+		iconP1.scale.set(mult, mult);
+		iconP1.updateHitbox();
 
-				var mult:Float = FlxMath.lerp(1, iconP2.scale.x, Utils.boundTo(1 - (elapsed * 9), 0, 1));
-				iconP2.scale.set(mult, mult);
-				iconP2.updateHitbox();
+		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+		iconP2.scale.set(mult, mult);
+		iconP2.updateHitbox();
 
-				var iconOffset:Int = 26;
+		var iconOffset:Int = 26;
 
-				iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
-		        iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
-                
-            case 'Classic':
-                iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, 0.50)));
-				iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, 0.50)));
-				iconP1.updateHitbox();
-				iconP2.updateHitbox();
-		   }
+		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset;
+		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2;
 
         if (health > 2)
 			health = 2;
@@ -3769,7 +3740,7 @@ class PlayState extends MusicBeatState
 
 		
         if(healthBar.percent < 30)
-		FlxTween.tween(badLoseVin, {alpha:0.75}, 1, {ease: FlxEase.linear});
+		FlxTween.tween(badLoseVin, {alpha:0.3}, 1, {ease: FlxEase.linear});
         else
         FlxTween.tween(badLoseVin, {alpha: 0}, 1, {ease: FlxEase.linear});
              
@@ -3877,7 +3848,7 @@ class PlayState extends MusicBeatState
 				var strumGroup:FlxTypedGroup<StrumNote> = playerStrums;
 				if(!daNote.mustPress) strumGroup = opponentStrums;
 
-                                 if (daNote.isSustainNote)
+                if (daNote.isSustainNote)
 				daNote.cameras = [camSus];
 
 				var strumX:Float = strumGroup.members[daNote.noteData].x;
@@ -5599,7 +5570,6 @@ class PlayState extends MusicBeatState
 
 			if (!note.isSustainNote)
 			{
-            
 				FlxG.sound.play(Paths.sound('note_click'), ClientPrefs.hsvol); // it must be HERE - PurSnake
                 if(modchartObjects.exists('note${note.ID}'))modchartObjects.remove('note${note.ID}');
 				note.kill();
@@ -5921,58 +5891,27 @@ class PlayState extends MusicBeatState
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 
 		if (generatedMusic && PlayState.SONG.notes[Std.int(curStep / 16)] != null && !endingSong && !isCameraOnForcedPos)
-			{
-				moveCameraSection(Std.int(curStep / 16));
-			}
+			moveCameraSection(Std.int(curStep / 16));
+		
 
 		if (camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % currentCamBeat == 0)
-			{
-				FlxG.camera.zoom += 0.015 * camZoomingMult;
-				camHUD.zoom += 0.03 * camZoomingMult;
-			}
+		{
+			FlxG.camera.zoom += 0.015 * camZoomingMult;
+			camHUD.zoom += 0.03 * camZoomingMult;
+		}
 
-            switch(ClientPrefs.hliconbop)
-				{
-					case 'Modern':
-						iconP1.scale.set(1.2, 1.2);
-						iconP2.scale.set(1.2, 1.2);
-		
-						iconP1.updateHitbox();
-						iconP2.updateHitbox();
-		
-					case 'Classic':
-						iconP1.setGraphicSize(Std.int(iconP1.width + 30));
-						iconP2.setGraphicSize(Std.int(iconP2.width + 30));
-		
-						iconP1.updateHitbox();
-						iconP2.updateHitbox();
-		
-					case 'Grafex':
-						if (curBeat % 2 == 0)
-							{   
-                                iconbop = 1.1;
-                                iconP1.scale.x = 1;
-								iconP2.scale.y = 1; 
-								FlxTween.tween(iconP1.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
-								FlxTween.tween(iconP2.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
-							}
-				        if (curBeat % 2 == 1)
-							{
-								iconbop = 1.2;
-								iconP1.scale.x = 1;
-								iconP2.scale.y = 1;
-								FlxTween.tween(iconP1.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
-								FlxTween.tween(iconP2.scale, {x: iconbop, y: iconbop}, Conductor.crochet / 2000, {ease: FlxEase.quadOut, type: BACKWARD});
-							} 
-				}
-		
-				if(ClientPrefs.scoreZoom && curBeat % 2 == 1)
-					{
-						scoreTxt.scale.x = 1;
-						scoreTxt.scale.y = 1;
-						FlxTween.tween(scoreTxt.scale, {x: 1.25, y: 1.15}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});               
-					}
-			
+		iconP1.scale.set(1.2, 1.2);
+		iconP2.scale.set(1.2, 1.2);
+
+		iconP1.updateHitbox();
+		iconP2.updateHitbox();
+    
+		if(ClientPrefs.scoreZoom && curBeat % 2 == 1)
+		{
+			scoreTxt.scale.x = 1;
+			scoreTxt.scale.y = 1;
+			FlxTween.tween(scoreTxt.scale, {x: 1.25, y: 1.15}, 0.3, {ease: FlxEase.quadOut, type: BACKWARD});               
+		}
 		
 		if (gf != null && curBeat % Math.round(gfSpeed * gf.danceEveryNumBeats) == 0 && gf.animation.curAnim != null && !gf.animation.curAnim.name.startsWith("sing") && !gf.stunned)
 		{
@@ -6337,14 +6276,7 @@ class PlayState extends MusicBeatState
 			}  
 		}
 	}
-	// Future things - PurSnake
-	/*var dadTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
-	insert(members.indexOf(dadGroup) - 1, dadTrail);
-	var bfTrail = new FlxTrail(boyfriend, null, 4, 24, 0.3, 0.069); 
-	insert(members.indexOf(boyfriendGroup) - 1, bfTrail);
-	var gfTrail = new FlxTrail(gf, null, 4, 24, 0.3, 0.069); 
-	insert(members.indexOf(gfGroup) - 1, gfTrail);*/
-			   
+	
 	var camFocus:String = "";
 	var daFunneOffsetMultiplier:Float = 20;
 	var dadPos:Array<Float> = [0, 0];

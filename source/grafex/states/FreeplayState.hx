@@ -110,17 +110,6 @@ class FreeplayState extends MusicBeatState
 			addSong(songArray[i], 0, 'steven-new', FlxColor.fromRGB(146, 113, 253));
 		}
 
-		/*//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
-
-		var initSonglist = Utils.coolTextFile(Paths.txt('freeplaySonglist'));
-		for (i in 0...initSonglist.length)
-		{
-			if(initSonglist[i] != null && initSonglist[i].length > 0) {
-				var songArray:Array<String> = initSonglist[i].split(":");
-				addSong(songArray[0], 0, songArray[1], Std.parseInt(songArray[2]));
-			}
-		}*/
-
         bg = new FlxBackdrop(Paths.image('menus/freeplay/fpBG'), 10, 0, true, true);
 		bg.scrollFactor.set(0,0);
 		bg.antialiasing = true;
@@ -195,22 +184,7 @@ class FreeplayState extends MusicBeatState
 
 		changeSelection();
 
-		// JUST DOIN THIS SHIT FOR TESTING!!!
-		/* 
-			var md:String = Markdown.markdownToHtml(Assets.getText('CHANGELOG.md'));
-
-			var texFel:TextField = new TextField();
-			texFel.width = FlxG.width;
-			texFel.height = FlxG.height;
-			// texFel.
-			texFel.htmlText = md;
-
-			FlxG.stage.addChild(texFel);
-
-			// scoreText.textField.htmlText = md;
-
-			trace(md);
-		 */
+		camZoom = FlxTween.tween(this, {}, 0);
 
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
 		textBG.alpha = 0.6;
@@ -245,26 +219,10 @@ class FreeplayState extends MusicBeatState
 		return (!leWeek.startUnlocked && leWeek.weekBefore.length > 0 && (!StoryMenuState.weekCompleted.exists(leWeek.weekBefore) || !StoryMenuState.weekCompleted.get(leWeek.weekBefore)));
 	}
 	
-	/*public function addWeek(songs:Array<String>, weekNum:Int, weekColor:Int, ?songCharacters:Array<String>)
-	{
-		if (songCharacters == null)
-			songCharacters = ['bf'];
-
-		var num:Int = 0;
-		for (song in songs)
-		{
-			addSong(song, weekNum, songCharacters[num]);
-			this.songs[this.songs.length-1].color = weekColor;
-
-			if (songCharacters.length != 1)
-				num++;
-		}
-	}*/
-
 	var instPlaying:Int = -1;
     var holdTime:Float = 0;
 	var songForText:String;
-   private static var vocals:FlxSound = null;
+    private static var vocals:FlxSound = null;
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music != null)
@@ -294,9 +252,7 @@ class FreeplayState extends MusicBeatState
 		}
 
 		scoreText.text = 'Score: ' + lerpScore;
-
-		FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, Utils.boundTo(1 - (elapsed * 3.125), 0, 1));
-
+		
 		var rightP = controls.UI_RIGHT_P;
 		var leftP = controls.UI_LEFT_P;
 		var accepted = controls.ACCEPT;
@@ -344,12 +300,12 @@ class FreeplayState extends MusicBeatState
 			if(instPlaying != curSelected)
 			{
 				#if PRELOAD_ALL
-                                destroyFreeplayVocals();
+               destroyFreeplayVocals();
 				FlxG.sound.music.volume = 0;
 				Paths.currentModDirectory = songs[curSelected].folder;
 				var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-                                if (PlayState.SONG.needsVoices)
+                if (PlayState.SONG.needsVoices)
 					vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
 				else
 					vocals = new FlxSound();
@@ -370,15 +326,6 @@ class FreeplayState extends MusicBeatState
 			persistentUpdate = false;
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
-			/*#if MODS_ALLOWED
-			if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
-			#else
-			if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
-			#end
-				poop = songLowercase;
-				curDifficulty = 1;
-				trace('Couldnt find file');
-			}*/
 			trace(poop);
 
 			PlayState.SONG = Song.loadFromJson(poop, songLowercase);
@@ -399,8 +346,6 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.music.volume = 0;
 					
 			destroyFreeplayVocals();
-
-
 		}
 		else if(controls.RESET)
         {
@@ -411,11 +356,16 @@ class FreeplayState extends MusicBeatState
 		super.update(elapsed);
 	}
 
+	var camZoom:FlxTween;
+
 	override function beatHit() {
 		super.beatHit();
 
-		if (FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms && curBeat % 2 == 0)
-			FlxG.camera.zoom += 0.015;
+		if(ClientPrefs.camZooms) {
+		    FlxG.camera.zoom += 0.015;
+		    camZoom = FlxTween.tween(FlxG.camera, {zoom: 1}, 0.15);
+        }
+
 	}
 	public static function destroyFreeplayVocals() {
 		if(vocals != null) {
@@ -448,71 +398,25 @@ class FreeplayState extends MusicBeatState
 		Paths.currentModDirectory = songs[curSelected].folder;
 		PlayState.storyWeek = songs[curSelected].week;
 
+		songForText = '???';
+
 		switch(curSelected)
 		{
 			case 2:
-			    if(!ClientPrefs.pancakesUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Pancakes';
-				}
+			    if(ClientPrefs.pancakesUnlocked) songForText = 'Pancakes';
 			case 3:
-			    if(!ClientPrefs.protestUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Protest';
-				}
+			    if(ClientPrefs.protestUnlocked) songForText = 'Protest';
 			case 4:
-			    if(!ClientPrefs.nuisanceUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Nuisance';
-				}
+			    if(ClientPrefs.nuisanceUnlocked) songForText = 'Nuisance';
 			case 5:
-			    if(!ClientPrefs.mocUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'MOC';
-				}
+			    if(ClientPrefs.mocUnlocked) songForText = 'MOC';
 			case 6:
-			    if(!ClientPrefs.racismUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Racism';
-				}
+			    if(ClientPrefs.racismUnlocked) songForText = 'Racism';
 			case 7:
-			    if(!ClientPrefs.starlightUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Starlight';
-				}
+			    if(ClientPrefs.starlightUnlocked) songForText = 'Starlight';
 			case 8:
-			    if(!ClientPrefs.flanUnlocked)
-				{
-					songForText = '???';
-				}
-				else
-				{
-					songForText = 'Flan';
-				}
+			    if(ClientPrefs.flanUnlocked) songForText = 'Flan';
+
 			default:
 			    songForText = songs[curSelected].songName;
 		}

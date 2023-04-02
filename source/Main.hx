@@ -75,32 +75,12 @@ class Main extends Sprite
 		{
 			trace("Game unfocused");
 	
-			if(!ClientPrefs.autoPause)
-			{
-			// Lower global volume when unfocused
-				if (focusMusicTween != null)
-					focusMusicTween.cancel();
-			    focusMusicTween = FlxTween.tween(FlxG.sound, {volume: FlxG.sound.volume * 0.2}, 0.5);
-	
-			// Conserve power by lowering draw framerate when unfocuced
-			FlxG.drawFramerate = lowFps;
-			}
 		}
 	
 	function onWindowFocusIn()
 	{
 		trace("Game focused");
 
-		if(!ClientPrefs.autoPause)
-		{
-			// Normal global volume when focused
-			if (focusMusicTween != null)
-				focusMusicTween.cancel();
-			focusMusicTween = FlxTween.tween(FlxG.sound, {volume: FlxG.sound.volume * 5}, 0.5);
-			// Bring framerate back when focused
-			FlxG.drawFramerate = ClientPrefs.framerate;
-			FlxG.updateFramerate = ClientPrefs.framerate;
-		}
 	}
 	
 	function onCrash(e:UncaughtErrorEvent):Void

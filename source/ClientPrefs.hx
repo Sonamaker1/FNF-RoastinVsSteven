@@ -20,12 +20,12 @@ class ClientPrefs {
     public static var instantRespawn:Bool = false;
     public static var hliconbop:String = 'Grafex';
     public static var hliconbopNum:Int = 0;
-    public static var underdelayalpha:Float = 0.1;
+    public static var underdelayalpha:Float = 0;
     public static var underdelayonoff:Bool = true;
     public static var noteSkin:String = 'Default';
     public static var noteSkinNum:Int = 0;
     public static var autoPause:Bool = false;
-    public static var showjud:Bool = true;
+    public static var showjud:Bool = false;
     public static var showCombo:Bool = true;
     public static var blurNotes:Bool = false;
 	public static var visibleHealthbar:Bool = true;
@@ -57,7 +57,7 @@ class ClientPrefs {
 	public static var arrowHSV:Array<Array<Int>> = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
 	public static var imagesPersist:Bool = false;
 	public static var ghostTapping:Bool = true;
-	public static var timeBarType:String = 'Time Left';
+	public static var timeBarType:String = 'Disabled';
     public static var timeBarTypeNum:Int = 0;
 	public static var scoreZoom:Bool = true;
 	public static var noReset:Bool = false;

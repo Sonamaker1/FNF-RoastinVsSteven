@@ -170,8 +170,6 @@ class Utils
 			var artistPrefix:String = '';
 			switch (song) // Write here your Composer(s)
 			{
-				case 'alteratrocity' | 'fluffy-revenge':
-                    artistPrefix = 'JustXale';
                 default:
 				    artistPrefix = 'Kawai Sprite';
 			}	

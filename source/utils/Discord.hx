@@ -84,10 +84,9 @@ class DiscordClient
 			largeImageKey: 'discordlogo',
 			largeImageText: "Grafex v " + grafex.data.EngineData.grafexEngineVersion,
 			smallImageKey : smallImageKey,
-                        smallImageText : smallImageText,
-			// Obtained times are in milliseconds so they are divided so Discord can use it
+            smallImageText : smallImageText,
 			startTimestamp : Std.int(startTimestamp / 1000),
-                        endTimestamp : Std.int(endTimestamp / 1000)
+            endTimestamp : Std.int(endTimestamp / 1000)
 		});
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, ,$smallImageText ,$hasStartTimestamp, $endTimestamp');

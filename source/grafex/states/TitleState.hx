@@ -316,7 +316,7 @@ class TitleState extends MusicBeatState
 		FlxG.watch.addQuick("stepShit", curStep);
 		if (FlxG.sound.music != null)
 		Conductor.songPosition = FlxG.sound.music.time;
-        FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, 0.95);
+        FlxG.camera.zoom = FlxMath.lerp(1, FlxG.camera.zoom, 0.97);
 
 		if(FlxG.keys.justPressed.F11)
             FlxG.fullscreen = !FlxG.fullscreen;
@@ -369,10 +369,6 @@ class TitleState extends MusicBeatState
                     add(SkipBlack);
 					transitioning = true;
 
-					// FlxG.sound.music.stop();
-					
-					// CoolUtil.cameraZoom(camera, 3, 3, FlxEase.backOut, ONESHOT);
-					
                 	FlxTween.tween(FlxG.camera, {zoom: 1.04}, 0.2, {ease: FlxEase.cubeInOut, type: ONESHOT, startDelay: 0});
                 	FlxTween.tween(FlxG.camera, {zoom: 1}, 0.2, {ease: FlxEase.cubeInOut, type: ONESHOT, startDelay: 0.25});
 					FlxTween.tween(gfDance, {x: -2000}, 2.5, {ease: FlxEase.expoInOut});
@@ -500,15 +496,6 @@ class TitleState extends MusicBeatState
 			textGroup.remove(textGroup.members[0], true);
 		}
 	}
-
-	/*function getCurrentBGColor()
-	{
-		var bgColor:String = titleJSON.backdropImageColor;
-		if(!bgColor.startsWith('0x')) {
-			bgColor = '0xFF' + bgColor;
-		}
-		return Std.parseInt(bgColor);
-	}*/
 
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
