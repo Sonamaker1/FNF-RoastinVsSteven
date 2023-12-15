@@ -1,65 +1,65 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				-22,
+				-262,
 				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				85,
+				-155,
 				-95
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
+			"fps": 24,
+			"name": "left",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-5,
-				-54
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-245,
+				-56
+			],
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
+			"fps": 24,
+			"name": "down",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-27,
-				137
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-267,
+				142
+			],
 			"anim": "singUP",
-			"indices": [],
-			"name": "up"
+			"fps": 24,
+			"name": "up",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-148,
-				-68
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-338,
+				-66
+			],
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right"
+			"fps": 24,
+			"name": "right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/snapback/mordecai_snapped",
 	"position": [
-		30,
+		-90,
 		50
 	],
 	"healthbar_colors2": [
@@ -79,5 +79,5 @@
 		-150
 	],
 	"sing_duration": 6.1,
-	"scale": 1.35
+	"scale": 1.45
 }

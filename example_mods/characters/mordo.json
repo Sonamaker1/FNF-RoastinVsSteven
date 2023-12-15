@@ -1,59 +1,70 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				-23,
 				-10
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "mordecaiidle"
+			"fps": 24,
+			"name": "mordecaiidle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-29,
 				-13
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "mordecaileft"
+			"fps": 24,
+			"name": "mordecaileft",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-17,
 				-27
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "mordecaidown"
+			"fps": 24,
+			"name": "mordecaidown",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-17,
 				-15
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "mordecaiup"
+			"fps": 24,
+			"name": "mordecaiup",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-25,
 				-10
 			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "mordecairight",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-20,
+				-220
+			],
 			"indices": [],
 			"fps": 24,
-			"anim": "singRIGHT",
+			"anim": "hah",
 			"loop": false,
-			"name": "mordecairight"
+			"name": "mordecaihah"
 		}
 	],
 	"no_antialiasing": false,

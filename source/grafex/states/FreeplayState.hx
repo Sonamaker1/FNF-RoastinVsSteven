@@ -15,6 +15,7 @@ import utils.Discord.DiscordClient;
 import grafex.states.editors.ChartingState;
 import flash.text.TextField;
 import flixel.FlxG;
+import flixel.util.FlxAxes; //Fixed that for you - Winn
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionableState;
@@ -30,6 +31,8 @@ import openfl.utils.Assets as OpenFlAssets;
 import grafex.data.WeekData;
 import lime.app.Application;
 import sys.FileSystem;
+
+import flixel.tweens.FlxEase;
 import flixel.util.FlxTimer;
 
 using StringTools;
@@ -430,6 +433,7 @@ class FreeplayState extends MusicBeatState
 		});
 
 		FlxTween.tween(cnLogoDown, {y: 410}, 0.12);
+		
 
 		Utils.difficulties = Utils.defaultDifficulties.copy();
 		var diffStr:String = WeekData.getCurrentWeek().difficulties;

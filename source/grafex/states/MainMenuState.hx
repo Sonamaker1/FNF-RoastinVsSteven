@@ -6,7 +6,9 @@ import grafex.systems.statesystem.MusicBeatState;
 #if desktop
 import utils.Discord.DiscordClient;
 #end
+import grafex.systems.song.Song;
 import flixel.FlxG;
+import grafex.states.substates.LoadingState;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
@@ -38,7 +40,7 @@ class MainMenuState extends MusicBeatState
 
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
-	
+	private static var curWeek:Int = 1;
 	var menuItems:FlxTypedGroup<FlxText>;
 	var menuArtBG:FlxSprite;
 	var menuArts:FlxTypedGroup<FlxSprite>;
@@ -46,13 +48,16 @@ class MainMenuState extends MusicBeatState
     public static var firstStart:Bool = true;
 
 	var logo:FlxSprite;
+	var menuBgshit:FlxSprite;
 
 	var optionShit:Array<String> = [
-		'MAIN SERIES',
-		'BONUS EPISODES',
+		'_ MAIN SERIES',
+		'_  BONUS EPISODES',
 		'CREDITS',
 		'OPTIONS'
 	];
+	//hi cbag here, instead of actually doing good code to fix the centering issue i just changed the array and files names. it worked :) sorry to nep or future me if you have to even-
+	//tually deal with this
 
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
@@ -69,7 +74,9 @@ class MainMenuState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menu", null);
 		#end
+		PlayState.isStoryMode = true;
         WeekData.loadTheFirstEnabledMod();
+		WeekData.reloadWeekFiles(true);
         FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
 
@@ -105,17 +112,26 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
+		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.3);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 		add(camFollowPos);
+		
 
 		var bg:FlxSprite = new FlxSprite(0,0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.WHITE);
 		bg.scrollFactor.set(0,0);
 		bg.screenCenter();
 		add(bg);
+		var menuBgshit:FlxSprite = new FlxSprite(-980,-700);
+		menuBgshit.frames = Paths.getSparrowAtlas('menus/main/menubg');
+		menuBgshit.antialiasing = false;
+		menuBgshit.animation.addByPrefix('ballpenis', 'idle', 36);
+		menuBgshit.animation.play('ballpenis');
+		menuBgshit.scale.set(1,1);
+
+		add (menuBgshit);
 
 		var grad:FlxSprite = new FlxSprite(10,0).loadGraphic(Paths.image('menus/main/gradient'));
 		grad.scrollFactor.set(0,0);
@@ -123,15 +139,16 @@ class MainMenuState extends MusicBeatState
 		grad.screenCenter();
 		add(grad);
 
-		logo = new FlxSprite(-1075, -612);
+		logo = new FlxSprite(-600, -612);
 		logo.frames = Paths.getSparrowAtlas('menus/roastin_logo');
 		logo.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logo.setGraphicSize(Std.int(0.28 * logo.width));
 		logo.antialiasing = ClientPrefs.globalAntialiasing;
 		add(logo);
 
-		menuArtBG = new FlxSprite(-627, 234).makeGraphic(365, 412, FlxColor.BLACK);
+		menuArtBG = new FlxSprite(-600, 134).makeGraphic(365, 412, FlxColor.BLACK);
         menuArtBG.scrollFactor.set(0,0);
+		menuArtBG.scale.set(1.28, 1.28);
 		add(menuArtBG);
 		FlxTween.tween(menuArtBG, {x: 73}, 1, {ease: FlxEase.quadOut});
 
@@ -144,25 +161,28 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 			{
-				var menuArt:FlxSprite = new FlxSprite(-900,-75).loadGraphic(Paths.image('menus/main/arts/' + optionShit[i]));
+				var menuArt:FlxSprite = new FlxSprite(-876,-175).loadGraphic(Paths.image('menus/main/arts/' + optionShit[i]));
 				menuArt.scrollFactor.set(0,0);
 				menuArt.antialiasing = true;
-				menuArt.setGraphicSize(Std.int(0.38 * menuArt.width));
+				menuArt.setGraphicSize(Std.int(0.48 * menuArt.width));
 				menuArt.ID = i;
 		        menuArts.add(menuArt);
 				FlxTween.tween(menuArt, {x: -200}, 1, {ease: FlxEase.quadOut});
-				
+		
 				var offset:Float = 88 - (Math.max(optionShit.length, 4) - 4) * 80;
-				var menuItem:FlxText = new FlxText(FlxG.width * 3, (i * 90)  + offset + 20, optionShit[i], 45);
-				menuItem.setFormat(Paths.font("vcr.ttf"), 45, 0xFF5B5B5C, RIGHT);
+				var menuItem:FlxText = new FlxText(FlxG.width * 3, (i * 110)  + offset + 20, optionShit[i], 45);
+				menuItem.setFormat(Paths.font("cnFont.ttf"), 45, 0xFF0C0C0C, RIGHT, 0xFF4E4E4E);
 				menuItem.ID = i;
+				
 				menuItems.add(menuItem);
+				
+				menuItem.scale.set(1.4, 1.4);
 				var scr:Float = (optionShit.length - 4) * 0.135;
 				if(optionShit.length < 6) scr = 0;
 				menuItem.scrollFactor.set(0, yScroll);
 				menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 				finishedFunnyMove = true;
-				menuItem.x= 800;
+				
 
 				changeItem();
 			}
@@ -281,15 +301,15 @@ class MainMenuState extends MusicBeatState
 				if (spr.ID == curSelected && finishedFunnyMove)
 				{
 					spr.alpha = 1;
-					FlxTween.tween(spr, {x: 735}, 0.15, {
-					    ease: FlxEase.linear});
+					FlxTween.tween(spr, {x: 615}, 0.45, {
+					    ease: FlxEase.quadOut});
 				}
 
 				if (spr.ID != curSelected)
 				{
 					spr.alpha = 0.6;
-					FlxTween.tween(spr, {x: 800}, 0.15, {
-				    	ease: FlxEase.linear});
+					FlxTween.tween(spr, {x: 700}, 0.45, {
+				    	ease: FlxEase.quadOut});
 				} 
 			}); 
 
@@ -334,7 +354,7 @@ class MainMenuState extends MusicBeatState
 				{
 					if (curSelected == spr.ID)
 						{
-							FlxTween.tween(spr, {x : -575}, 0.75, {
+							FlxTween.tween(spr, {x : -575}, 0.79, {
 								ease: FlxEase.quadInOut,
 							});					
 						}
@@ -357,12 +377,14 @@ class MainMenuState extends MusicBeatState
 						FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 						{
 							var daChoice:String = optionShit[curSelected];
-
+//hi cbag here again just changing these names so they actually work refer to my notes above
 							switch (daChoice)
 							{
-								case 'MAIN SERIES':
-									MusicBeatState.switchState(new StoryMenuState());
-								case 'BONUS EPISODES':
+								case '_ MAIN SERIES':
+									
+								MusicBeatState.switchState(new StoryMenuState());
+
+								case '_  BONUS EPISODES':
 									MusicBeatState.switchState(new FreeplayState());
 								#if MODS_ALLOWED
 								case 'mods':

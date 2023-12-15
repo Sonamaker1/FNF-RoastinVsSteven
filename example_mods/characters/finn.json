@@ -1,59 +1,70 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				-22,
+				-24,
 				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "finnidle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-19,
 				-18
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left"
+			"fps": 24,
+			"name": "finnleft",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-12,
 				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "down"
+			"fps": 24,
+			"name": "finndown",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				9,
 				-12
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "up"
+			"fps": 24,
+			"name": "finnup",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-25,
 				-21
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right"
+			"fps": 24,
+			"name": "finnright",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-90,
+				-70
+			],
+			"anim": "hah",
+			"fps": 24,
+			"name": "finnhah",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,

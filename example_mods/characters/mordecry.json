@@ -72,12 +72,12 @@
 	"healthbar_colors": [
 		82,
 		127,
-		182
+		255
 	],
 	"camera_position": [
-		570,
-		-170
+		630,
+		-220
 	],
 	"sing_duration": 4,
-	"scale": 1.3
+	"scale": 1.4
 }

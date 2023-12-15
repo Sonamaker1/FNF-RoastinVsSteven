@@ -1,6 +1,10 @@
 package grafex.systems.statesystem;
 
+#if USE_FLXVIDEO
+import hxcodec.flixel.FlxVideo;
+#else
 import utils.FlxVideo;
+#end
 import grafex.systems.Conductor.BPMChangeEvent;
 import lime.app.Application;
 import flixel.FlxG;

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Roastin' Moving Gradient Diag Ver.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="version_tween_one0000" x="10" y="10" width="2354" height="1372" frameX="0" frameY="0" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0001" x="2374" y="10" width="2354" height="1372" frameX="-2" frameY="-2" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0002" x="2374" y="10" width="2354" height="1372" frameX="-4" frameY="-4" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0003" x="2374" y="10" width="2354" height="1372" frameX="-7" frameY="-6" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0004" x="2374" y="10" width="2354" height="1372" frameX="-9" frameY="-9" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0005" x="2374" y="10" width="2354" height="1372" frameX="-11" frameY="-11" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0006" x="2374" y="10" width="2354" height="1372" frameX="-13" frameY="-13" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0007" x="2374" y="10" width="2354" height="1372" frameX="-15" frameY="-15" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0008" x="2374" y="10" width="2354" height="1372" frameX="-18" frameY="-17" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0009" x="2374" y="10" width="2354" height="1372" frameX="-20" frameY="-20" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0010" x="2374" y="10" width="2354" height="1372" frameX="-22" frameY="-22" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0011" x="2374" y="10" width="2354" height="1372" frameX="-24" frameY="-24" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0012" x="2374" y="10" width="2354" height="1372" frameX="-27" frameY="-26" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0013" x="2374" y="10" width="2354" height="1372" frameX="-29" frameY="-29" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0014" x="2374" y="10" width="2354" height="1372" frameX="-31" frameY="-31" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0015" x="2374" y="10" width="2354" height="1372" frameX="-33" frameY="-33" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0016" x="2374" y="10" width="2354" height="1372" frameX="-35" frameY="-35" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0017" x="2374" y="10" width="2354" height="1372" frameX="-38" frameY="-37" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0018" x="2374" y="10" width="2354" height="1372" frameX="-40" frameY="-40" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0019" x="2374" y="10" width="2354" height="1372" frameX="-42" frameY="-42" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0020" x="2374" y="10" width="2354" height="1372" frameX="-44" frameY="-44" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0021" x="2374" y="10" width="2354" height="1372" frameX="-46" frameY="-46" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0022" x="2374" y="10" width="2354" height="1372" frameX="-49" frameY="-48" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0023" x="2374" y="10" width="2354" height="1372" frameX="-51" frameY="-51" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0024" x="2374" y="10" width="2354" height="1372" frameX="-53" frameY="-53" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0025" x="2374" y="10" width="2354" height="1372" frameX="-55" frameY="-55" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0026" x="2374" y="10" width="2354" height="1372" frameX="-57" frameY="-57" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0027" x="2374" y="10" width="2354" height="1372" frameX="-60" frameY="-59" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0028" x="2374" y="10" width="2354" height="1372" frameX="-62" frameY="-62" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0029" x="2374" y="10" width="2354" height="1372" frameX="-64" frameY="-64" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0030" x="2374" y="10" width="2354" height="1372" frameX="-66" frameY="-66" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0031" x="2374" y="10" width="2354" height="1372" frameX="-68" frameY="-68" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0032" x="2374" y="10" width="2354" height="1372" frameX="-71" frameY="-70" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0033" x="2374" y="10" width="2354" height="1372" frameX="-73" frameY="-73" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0034" x="2374" y="10" width="2354" height="1372" frameX="-75" frameY="-75" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0035" x="2374" y="10" width="2354" height="1372" frameX="-77" frameY="-77" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0036" x="2374" y="10" width="2354" height="1372" frameX="-79" frameY="-79" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0037" x="2374" y="10" width="2354" height="1372" frameX="-82" frameY="-81" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0038" x="2374" y="10" width="2354" height="1372" frameX="-84" frameY="-84" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0039" x="2374" y="10" width="2354" height="1372" frameX="-86" frameY="-86" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0040" x="2374" y="10" width="2354" height="1372" frameX="-88" frameY="-88" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0041" x="2374" y="10" width="2354" height="1372" frameX="-91" frameY="-90" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0042" x="2374" y="10" width="2354" height="1372" frameX="-93" frameY="-93" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0043" x="2374" y="10" width="2354" height="1372" frameX="-95" frameY="-95" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0044" x="2374" y="10" width="2354" height="1372" frameX="-97" frameY="-97" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0045" x="2374" y="10" width="2354" height="1372" frameX="-99" frameY="-99" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0046" x="2374" y="10" width="2354" height="1372" frameX="-102" frameY="-101" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0047" x="2374" y="10" width="2354" height="1372" frameX="-104" frameY="-104" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0048" x="2374" y="10" width="2354" height="1372" frameX="-106" frameY="-106" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0049" x="2374" y="10" width="2354" height="1372" frameX="-108" frameY="-108" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0050" x="2374" y="10" width="2354" height="1372" frameX="-110" frameY="-110" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0051" x="2374" y="10" width="2354" height="1372" frameX="-113" frameY="-112" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0052" x="2374" y="10" width="2354" height="1372" frameX="-115" frameY="-115" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0053" x="2374" y="10" width="2354" height="1372" frameX="-117" frameY="-117" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0054" x="2374" y="10" width="2354" height="1372" frameX="-119" frameY="-119" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0055" x="2374" y="10" width="2354" height="1372" frameX="-121" frameY="-121" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0056" x="2374" y="10" width="2354" height="1372" frameX="-124" frameY="-123" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0057" x="2374" y="10" width="2354" height="1372" frameX="-126" frameY="-126" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0058" x="2374" y="10" width="2354" height="1372" frameX="-128" frameY="-128" frameWidth="2484" frameHeight="1503"/>
+	<SubTexture name="version_tween_one0059" x="4738" y="10" width="2354" height="1373" frameX="-130" frameY="-130" frameWidth="2484" frameHeight="1503"/>
+</TextureAtlas>

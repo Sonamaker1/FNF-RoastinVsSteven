@@ -24,7 +24,7 @@ class ClientPrefs {
     public static var underdelayonoff:Bool = true;
     public static var noteSkin:String = 'Default';
     public static var noteSkinNum:Int = 0;
-    public static var autoPause:Bool = false;
+    public static var autoPause:Bool = true;
     public static var showjud:Bool = false;
     public static var showCombo:Bool = true;
     public static var blurNotes:Bool = false;
@@ -362,7 +362,7 @@ class ClientPrefs {
 		}
 
  		if(FlxG.save.data.autoPause == null) {
-			autoPause = false;
+			autoPause = true;
 			FlxG.autoPause = autoPause;
 		}
 

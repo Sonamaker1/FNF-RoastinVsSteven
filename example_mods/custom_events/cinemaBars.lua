@@ -23,7 +23,7 @@ function onEvent(name,value1,value2)
 				doTweenY('MoveBT','bartop',-30,value2)
 				doTweenY('MoveBB','barbot',650,value2)
 			elseif alreadyActive == true then
-				debugPrint('alreadyThere')	
+				debugPrint('')	
 				doTweenY('MoveBT','bartop',-30,value2)
 				doTweenY('MoveBB','barbot',650,value2)
 			end

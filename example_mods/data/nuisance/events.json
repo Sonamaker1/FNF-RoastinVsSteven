@@ -108,11 +108,6 @@
 						"lyrics",
 						"I'm an orange!",
 						"ffffff, 35"
-					],
-					[
-						"HudDisappear",
-						"True",
-						"0.2"
 					]
 				]
 			],
@@ -144,11 +139,6 @@
 						"zoom",
 						"0.8",
 						""
-					],
-					[
-						"HudDisappear",
-						"False",
-						"0.2"
 					]
 				]
 			],
@@ -165,12 +155,6 @@
 			[
 				76540.6976744186,
 				[
-					[
-						"HudDisappear",
-						"True",
-						"0.1",
-						""
-					],
 					[
 						"lyrics",
 						"You'll never get me alive!",
@@ -202,11 +186,6 @@
 						"",
 						"ffffff, 24",
 						null
-					],
-					[
-						"HudDisappear",
-						"False",
-						"0.05"
 					]
 				]
 			],

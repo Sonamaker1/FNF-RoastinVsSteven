@@ -16,9 +16,9 @@ class NoteSplash extends FlxSprite
 		super(x, y);
 
 		var skin = 'noteSplashes';
-                if(PlayState.isPixelStage) {
-			      skin = 'pixelUI/noteSplashesPx';
-			}
+		if(PlayState.isPixelStage) {
+			skin = 'pixelUI/noteSplashesPx';
+		}
 		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 
 		loadAnims(skin);
@@ -31,25 +31,25 @@ class NoteSplash extends FlxSprite
 	}
 
 	public function setupNoteSplash(x:Float, y:Float, note:Int = 0, texture:String = null, hueColor:Float = 0, satColor:Float = 0, brtColor:Float = 0) {
-		
-                setPosition(x - Note.swagWidth * 0.95, y - Note.swagWidth);
+
+		setPosition(x - Note.swagWidth * 0.95, y - Note.swagWidth);
 		alpha = 0.8;
 
 		if(texture == null) {
-                        if(ClientPrefs.noteSkin == 'Grafex')
-			                texture = 'noteSplashesNew';
-			            else if(ClientPrefs.noteSkin == 'Johnny')
-						    texture = 'noteSplashesJohnny';
-                        else
-                        texture = 'noteSplashes';
+			if(ClientPrefs.noteSkin == 'Grafex')
+				texture = 'noteSplashesNew';
+			else if(ClientPrefs.noteSkin == 'Johnny')
+				texture = 'noteSplashesJohnny';
+			else
+				texture = 'noteSplashes';
 
-                        if(PlayState.isPixelStage) {
-                               if(ClientPrefs.noteSkin == 'Grafex')
-			       texture = 'pixelUI/noteSplashesPxNew';
-                               else
-                               texture = 'pixelUI/noteSplashesPx';
+			if(PlayState.isPixelStage) {
+				if(ClientPrefs.noteSkin == 'Grafex')
+					texture = 'pixelUI/noteSplashesPxNew';
+				else
+					texture = 'pixelUI/noteSplashesPx';
 			}
-                       
+
 			if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) texture = PlayState.SONG.splashSkin;
 		}
 
@@ -60,14 +60,14 @@ class NoteSplash extends FlxSprite
 		colorSwap.saturation = satColor;
 		colorSwap.brightness = brtColor;
 
-                if(ClientPrefs.noteSkin == 'Grafex')
-		offset.set(32, 45);
-                else
-                offset.set(10, 10);
+		if(ClientPrefs.noteSkin == 'Grafex')
+			offset.set(32, 45);
+		else
+			offset.set(10, 10);
 
 		var animNum:Int = FlxG.random.int(1, 2);
 		animation.play('note' + note + '-' + animNum, true);
-		if(animation.curAnim != null)animation.curAnim.frameRate = 18 + FlxG.random.int(-2, 2);
+		if(animation.curAnim != null) animation.curAnim.frameRate = 18 + FlxG.random.int(-2, 2);
 	}
 
 	function loadAnims(skin:String) {
@@ -77,7 +77,15 @@ class NoteSplash extends FlxSprite
 			animation.addByPrefix("note2-" + i, "note splash green " + i, 18, false);
 			animation.addByPrefix("note0-" + i, "note splash purple " + i, 18, false);
 			animation.addByPrefix("note3-" + i, "note splash red " + i, 18, false);
+			
+			var debugStr = '${skin} (Splashes) 1,2,0,3 - ${i} | ${animation.exists("note1-"+ i)}'+  
+			'${animation.exists("note2-" + i)}'+
+			'${animation.exists("note0-" + i)}'+
+			'${animation.exists("note3-" + i)}';
+			
+			if(debugStr.indexOf('false')>=0) trace(debugStr);
 		}
+		
 	}
 
 	override function update(elapsed:Float) {

@@ -523,7 +523,7 @@ class TitleState extends MusicBeatState
                     FlxG.sound.music.stop();
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
-					createCoolText(['Swagger Inc.'], 15);
+					createCoolText(['the dummies behind roastin.'], 15);
 				case 3:
 					addMoreText('Present', 45);		
 				case 5:

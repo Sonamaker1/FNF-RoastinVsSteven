@@ -1,126 +1,126 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				37,
 				6
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "idle",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				6
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "left0",
-			"indices": []
+			"indices": [],
+			"name": "left0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				38,
 				6
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWN",
-			"fps": 24,
-			"name": "down0",
-			"indices": []
+			"indices": [],
+			"name": "down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				38,
 				7
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "up0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				6
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "right0",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				7
 			],
-			"anim": "singRIGHTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "miss right",
-			"indices": []
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "miss right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				36,
 				6
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "miss up",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "miss up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				38,
 				6
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "miss left",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "miss left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				6
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "miss down",
-			"indices": []
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "miss down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-40,
 				-200
 			],
-			"anim": "showtime",
+			"loop": false,
 			"fps": 24,
-			"name": "shows about to start",
-			"indices": []
+			"anim": "showtime",
+			"indices": [],
+			"name": "shows about to start"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/snapback/buff_pink_steven_roasted",
 	"position": [
 		0,
-		-100
+		-530
 	],
 	"healthbar_colors2": [
 		255,
 		163,
-		221
+		241
 	],
 	"healthicon": "steven_buff",
 	"flip_x": true,
@@ -130,7 +130,7 @@
 		221
 	],
 	"camera_position": [
-		270,
+		50,
 		-80
 	],
 	"sing_duration": 4,

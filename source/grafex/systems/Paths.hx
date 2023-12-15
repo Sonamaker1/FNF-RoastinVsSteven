@@ -72,7 +72,12 @@ class Paths
 			dumpExclusions.push(key);
 	}
 
-	public static var dumpExclusions:Array<String> = [];
+	public static var dumpExclusions:Array<String> =
+	[
+		'assets/music/freakyMenu.$SOUND_EXT',
+		'assets/shared/music/breakfast.$SOUND_EXT',
+		'assets/shared/music/tea-time.$SOUND_EXT',
+	];
 	/// haya I love you for the base cache dump I took to the max
 
 public static function clearUnusedMemory() {
@@ -540,7 +545,22 @@ inline static public function modsShaderFragment(key:String, ?library:String)
 			localTrackedAssets.push(path);
 			return currentTrackedAssets.get(path);
 		}
-		trace('oh no its returning null NOOOO');
+
+		#if MODS_ALLOWED
+		//W: New thing lets see if it works.
+		//W: Hell yeah now I can put images in assets without worrying about manifest files lol
+		if(FileSystem.exists(path)) {
+			trace("new junk");
+			if(!currentTrackedAssets.exists(path)) {
+				var newGraphic:FlxGraphic = FlxG.bitmap.add(BitmapData.fromFile(path), false, path);
+				newGraphic.persist = true;
+				currentTrackedAssets.set(path, newGraphic);
+			}
+			localTrackedAssets.push(path);
+			return currentTrackedAssets.get(path);
+		}
+		#end
+		trace('oh no ['+path+'] is returning null NOOOO');
 		return null;
 	}
 

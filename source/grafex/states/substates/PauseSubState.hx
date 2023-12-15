@@ -22,7 +22,8 @@ import flixel.FlxCamera;
 import flixel.util.FlxStringUtil;
 import grafex.states.PlayState;
 import grafex.sprites.Alphabet;
-
+import flixel.animation.FlxAnimationController;
+import flixel.tweens.misc.VarTween;
 class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
@@ -58,6 +59,22 @@ class PauseSubState extends MusicBeatSubstate
 
 	public static var transCamera:FlxCamera;
 
+	public function TweenHandler(Object:Dynamic, Values:Dynamic, Duration:Float = 1, ?Options:TweenOptions):VarTween
+	{
+		var o = null;
+		if(Object!=null){
+			if(Options!=null){
+				o = FlxTween.tween(Object, Values, Duration, Options);
+			}
+			else{
+				o = FlxTween.tween(Object, Values, Duration);
+			}
+			o.stateName = "pauseMenu";
+			return o;
+		}
+		return FlxTween.tween(new FlxSprite(), {x: 0}, 0.2);
+	}
+	
 	public function new(x:Float, y:Float)
 	{
 		super();
@@ -78,11 +95,13 @@ class PauseSubState extends MusicBeatSubstate
 			menuItemsOG.insert(5 + num, 'Toggle Botplay');
 		}
 		menuItems = menuItemsOG;
-
+		
+		/*
 		for (i in 0...Utils.difficulties.length) {
 			var diff:String = '' + Utils.difficulties[i];
 			difficultyChoices.push(diff);
-		}
+		}*/
+		difficultyChoices.push('' + Utils.difficulties[2]);
 		difficultyChoices.push('BACK');
 
            if (!playingPause)
@@ -149,18 +168,18 @@ class PauseSubState extends MusicBeatSubstate
 		levelInfo.x = FlxG.width - (levelInfo.width + 20);
 		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
 		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 20);
-
-		FlxTween.tween(bg, {alpha: 0.6}, 0.4, {ease: FlxEase.quartInOut});
-		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
-		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
-		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
-
+		
+		TweenHandler(bg, {alpha: 0.6}, 0.4, {ease: FlxEase.quartInOut});
+		TweenHandler(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
+		TweenHandler(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
+		TweenHandler(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
-
+		
         regenMenu();
 		changeSelection();
-
+		FlxTween.freezeStateName = "grafex.states.PlayState";
+		//FlxAnimationController.globalSpeed = 0;
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 	}
 
@@ -233,9 +252,9 @@ class PauseSubState extends MusicBeatSubstate
 			{
 				if(menuItems.length - 1 != curSelected && difficultyChoices.contains(daSelected)) {
 					var name:String = PlayState.SONG.song;
-					var poop = Highscore.formatSong(name, curSelected);
+					var poop = Highscore.formatSong(name, 2);
 					PlayState.SONG = Song.loadFromJson(poop, name);
-					PlayState.storyDifficulty = curSelected;
+					PlayState.storyDifficulty = 2;//curSelected;
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
 					PlayState.changedDifficulty = true;
@@ -309,7 +328,7 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 					if(PlayState.isStoryMode) {
-						MusicBeatState.switchState(new StoryMenuState());
+						MusicBeatState.switchState(new MainMenuState());
 					} else {
 						MusicBeatState.switchState(new FreeplayState());
 					}
@@ -342,6 +361,7 @@ PlayState.cancelMusicFadeTween();
 
 	override function destroy()
 	{
+		FlxTween.freezeStateName = "";
 		if (!goToOptions)
 			{
 	         pauseMusic.destroy();
@@ -477,7 +497,7 @@ PlayState.cancelMusicFadeTween();
 									//countdownReady.scale.y = 0.7;
 			countdownReady.antialiasing = antialias;
 			add(countdownReady);
-			FlxTween.tween(countdownReady, {alpha: 0}, Conductor.crochet / 1000, {
+			TweenHandler(countdownReady, {alpha: 0}, Conductor.crochet / 1000, {
 				ease: FlxEase.cubeInOut,
 				onComplete: function(twn:FlxTween)
 				{
@@ -498,7 +518,7 @@ PlayState.cancelMusicFadeTween();
 									//countdownSet.scale.y = 0.7;
 			countdownSet.antialiasing = antialias;
 			add(countdownSet);
-			FlxTween.tween(countdownSet, { alpha: 0}, Conductor.crochet / 1000, {
+			TweenHandler(countdownSet, { alpha: 0}, Conductor.crochet / 1000, {
 				ease: FlxEase.cubeInOut,
 				onComplete: function(twn:FlxTween)
 				{
@@ -521,7 +541,7 @@ PlayState.cancelMusicFadeTween();
 									//countdownGo.scale.y = 0.7;
 			countdownGo.antialiasing = antialias;
 			add(countdownGo);
-			FlxTween.tween(countdownGo, {alpha: 0}, Conductor.crochet / 1000, {
+			TweenHandler(countdownGo, {alpha: 0}, Conductor.crochet / 1000, {
 				ease: FlxEase.cubeInOut,
 				onComplete: function(twn:FlxTween)
 				{

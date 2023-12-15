@@ -4,18 +4,18 @@
 		0
 	],
 	"boyfriend": [
-		963,
+		1263,
 		-32
 	],
 	"isPixelStage": false,
 	"opponent": [
 		-70,
-		100
+		40
 	],
-	"camera_opponent": [0, -120],
-	"camera_boyfriend": [0, -60],
+	"camera_opponent": [200, -250],
+	"camera_boyfriend": [180, 50],
 	"hide_girlfriend": false,
 	"directory": "",
-	"defaultZoom": 0.45,
+	"defaultZoom": 0.59,
         "dynamic_camera": true
 }

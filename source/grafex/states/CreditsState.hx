@@ -99,9 +99,9 @@ class CreditsState extends MusicBeatState
 	
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['FrimpleSchnips',		'frimple',		    'Runner of Swagger Inc., Creator of the Mod, Main Sprite Artist and Animator, Smart fella',				'https://twitter.com/FrimpleSchnips',	        '444444'],
-			['n3ps3n',			    'n3p',			    'Co-Runner of Swagger Inc., Main(and the only) Coder',							                        'https://twitter.com/bendeeeey2',		        'B42F71'],
-			['CBag',				'cbag',			    'Co-Runner of Swagger Inc., Musician and Charter',						                                'https://twitter.com/yoshubs',			        '5E99DF'],
+			['FrimpleSchnips',		'frimple',		    'Head Honcho, Creator of the Mod, Main Sprite Artist and Animator, Smart fella',				'https://twitter.com/FrimpleSchnips',	        '444444'],
+			['n3ps3n',			    'n3p',			    'Director, Main Coder',							                        'https://twitter.com/bendeeeey2',		        'B42F71'],
+			['CBag',				'cbag',			    'Director, Musician, Charter, Coder',						                                'https://twitter.com/CBag28_',			        '5E99DF'],
 			['gero',			    'gero',			    'Musician',		                                                                                        'https://www.youtube.com/@RaymondVito',			'9E29CF'],
 			['JulianMOCs',			'julian',			'Musician',		                                                                                        'https://twitter.com/JulianMOCs1',			    '9E29CF'],
 			['Propsnax',			'propsnax',			'Musician',	                                                                                            'https://twitter.com/Propsnax',			        'E1843A'],
@@ -119,9 +119,9 @@ class CreditsState extends MusicBeatState
 			['Suki',		        'suki',	            'Logo Artist',							                                                                'https://twitter.com/SukiTheTako',	            'CF2D2D'],
 			['Someone',			    'someone',		    'Concept Artist',								                                                        'https://twitter.com/FrimpleSchnips',		    '378FC7'],
 			['haylow',		        'haylow',	        'Charter',								                                                                'https://twitter.com/hayliuem',	                'FADC45'],
-			['Toad',	            'toad',			    'Charter',								                                                                'https://twitter.com/Toadstols',			    '5ABD4B'],
+			['Toad',	            'toad',			    'Charter, Coder',								                                                        'https://twitter.com/Toadstols',			    '5ABD4B'],
 			['BoyZa_',			    'boyza',		    'Charter',								                                                                'https://twitter.com/boyza___',		            '378FC7'],
-			['PurSnake',			'PurSnake',		    'Coder',								                                                                'https://twitter.com/PurSniki',		            '8C41B6'],
+			['PurSnake',			'pursnake',		    'Coder',								                                                                'https://twitter.com/PurSniki',		            '8C41B6'],
 			['LeSlay',				'leslay',			'Chromatic Scale Maker',											                                    'https://twitter.com/LeSlayWasTaken',		    '483D92'],
 			['DexterTheStick',		'dexterthestick',	'Chromatic Scale Maker',							                                                    'https://twitter.com/DexterTheStick',	        'CF2D2D'],
 			['SonicStrong',			'sonicstrong',		'Chromatic Scale Maker',								                                                'https://twitter.com/sonicstrong',		        '378FC7'],
@@ -129,6 +129,9 @@ class CreditsState extends MusicBeatState
 			['Friend',	            'friend',			'3D Artist',								                                                            'https://twitter.com/FriendFred3',			    '5ABD4B'],
 			['KhrisKhros',			'khris khross',		'Concept Musician',								                                                        'https://twitter.com/khris_khros',		        '378FC7'],
 			['Doctor Ross',			'doctor ross',		'Directing Help',								                                                        'https://mobile.twitter.com/texansshark',		'378FC7'],
+			['Squibble',			'squibble',		'Script help',								                                                        'https://www.youtube.com/channel/UCFauerFFkn1WlPCY3Y3iTIQ',		'378FC7'],
+			['Nick',				'nick',		'Script help',								                                                        'youtube.com',		'378FC7'],
+			['Winn',				'winn',		'Compilation Help, Source bugfixes',								                                                        'youtube.com',		'378FC7'],
 			['You!!!',			    'you',		        'Yes, you! Thank you so much for playing this mod. We worked really hard on it and we hope you liked it!',			'https://www.youtube.com/watch?v=T_aiaYkcSDo',	'378FC7']
 		];
 		

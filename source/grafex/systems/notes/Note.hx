@@ -57,8 +57,10 @@ class Note extends FlxSprite
 	public var gfNote:Bool = false;
 	public var mordoNote:Bool = false;
 	public var bothNote:Bool = false;
+	
+	public var skinName = '';
 	private var earlyHitMult:Float = 0.5;
-
+	
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
 	public static var GREEN_NOTE:Int = 2;
@@ -314,14 +316,15 @@ class Note extends FlxSprite
                 else
                 coolswag = '-' + ClientPrefs.noteSkin.toLowerCase().replace(' ', '-');
 		}
-                var skin:String = texture;
-		if(texture.length < 1) {
+        var skin:String = texture;
+        if(texture.length < 1) {
 			skin = PlayState.SONG.arrowSkin;
 			if(skin == null || skin.length < 1) {
 				skin = 'NOTE_assets';
 			}
 		}
-
+		skinName = skin;
+		
 		var animName:String = null;
 		if(animation.curAnim != null) {
 			animName = animation.curAnim.name;
@@ -391,7 +394,13 @@ class Note extends FlxSprite
 		animation.addByPrefix('redScroll', 'red0');
 		animation.addByPrefix('blueScroll', 'blue0');
 		animation.addByPrefix('purpleScroll', 'purple0');
-
+		
+		var up = '${skinName} | ${animation.exists("greenScroll")}'+  
+		'${animation.exists("redScroll")}'+
+		'${animation.exists("blueScroll")}'+
+		'${animation.exists("purpleScroll")}';
+		
+		if(up.indexOf('false')>=0) trace(up);
 		if (isSustainNote)
 		{
 			animation.addByPrefix('purpleholdend', 'pruple end hold');
@@ -403,8 +412,21 @@ class Note extends FlxSprite
 			animation.addByPrefix('greenhold', 'green hold piece');
 			animation.addByPrefix('redhold', 'red hold piece');
 			animation.addByPrefix('bluehold', 'blue hold piece');
+			
+			var u0 = 'Noteskin ends | ${animation.exists("purpleholdend")}'+  
+			'${animation.exists("greenholdend")}'+
+			'${animation.exists("redholdend")}'+
+			'${animation.exists("blueholdend")}';
+			if(u0.indexOf('false')>=0) trace(u0);
+			
+			var u0 ='Noteskin ends | ${animation.exists("purplehold")}'+  
+			'${animation.exists("greenhold")}'+
+			'${animation.exists("redhold")}'+
+			'${animation.exists("bluehold")}';
+			if(u0.indexOf('false')>=0) trace(u0);
+			
 		}
-
+		
 		setGraphicSize(Std.int(width * 0.7));
 		updateHitbox();
 	}

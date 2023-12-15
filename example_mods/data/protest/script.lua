@@ -6,7 +6,6 @@ function onCreatePost()
         precacheImage('misc/johnnyImgs/johnny4')
         precacheImage('misc/johnnyImgs/johnny5')
         precacheImage('misc/johnnyImgs/johnny6')
-        precacheImage('misc/johnnyImgs/johnny7')
         precacheImage('stages/johnatan/boom')
 
 	doTweenAlpha('hudalpha', 'camHUD', 0, 0.01, 'linear');

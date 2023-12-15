@@ -23,6 +23,7 @@ import sys.io.File;
 import sys.io.Process;
 import grafex.states.substates.PrelaunchingState;
 import grafex.states.TitleState;
+import grafex.states.MainMenuState;
 import utils.FPSMem;
 
 using StringTools;
@@ -144,9 +145,7 @@ class Main extends Sprite
 			game.width = Math.ceil(stageWidth / game.zoom);
 			game.height = Math.ceil(stageHeight / game.zoom);
 		}
-		#if debug
-		initialState = TitleState;
-		#end
+
 
 		ClientPrefs.loadDefaultKeys();
 
