@@ -39,6 +39,7 @@ function onCreatePost()
 	setProperty('mordo.color',0)
 
 	setProperty('testlol.visible', false)
+	setProperty('testlol.alpha', 0)
 	
 	setProperty('boyfriend.alpha',0)
 	setProperty('dad.alpha',0)
@@ -59,31 +60,42 @@ function onCreatePost()
 end
 
 local setInvis = false;
+local setVis = true;
 function onUpdatePost()
 	if not setInvis and getProperty('mordodkd.visible') then
 		setProperty('mordodkd.visible', false)
+        setObjectOrder('mordodkd', getObjectOrder('dadGroup')+1)
 		setInvis = true;
+	end
+
+    if not setVis and not getProperty('mordodkd.visible') then
+		setProperty('mordodkd.visible', true)
+		setVis = true;
 	end
 end 
 
-function onUpdatePost()
+local lastStep = 0
+
+function unstep(inputTime)
+    return (lastStep < inputTime and curStep>=inputTime)
+end
+
 
 function onStepHit()
-	if curStep == 64 then
+    if curStep == 64 or unstep(64) then
 		doTweenAlpha('mordoAlphaTween', 'mordo',1,1.2,'circOut')
 		end
-		if curStep == 83 then
+		if curStep == 83 or unstep(83)  then
 		doTweenAlpha('dadAlphaTween', 'dad',1,1.2,'circOut')
 		end
-		if curStep == 112 then
+		if curStep == 112 or unstep(112) then
 		doTweenAlpha('boyfriendAlphaTween', 'boyfriend',1,1.6,'circOut')
 		end
-if curStep == 128 then
+if curStep == 128 or unstep(128) then
 	for i = 0, 7 do 
 		setPropertyFromGroup('strumLineNotes', i, 'visible', true)
 	end
-
-	setProperty('laswitch.alpha',1)
+    setProperty('laswitch.alpha',1)
 	doTweenAlpha('theswitch','laswitch',0,1.92,'circOut')
 
 	setProperty('cameraSpeed', 99)
@@ -93,10 +105,10 @@ if curStep == 128 then
 
 
 end
-if curStep == 265 then
+if curStep == 265 or unstep(265) then
 	  doTweenZoom('raaa','camGame',0.07,0.79,'expoIn')
 end
-if curStep == 272 then
+if curStep == 272 or unstep(272) then
 	triggerEvent('Camera Follow Pos')
 	setProperty('mordo.alpha',0)
 	setProperty('cameraSpeed', 1.5)
@@ -119,6 +131,8 @@ if curStep == 272 then
 	setProperty('healthBarWN.visible', true)
 	setProperty('healthBar.visible', true)
 	setProperty('healthStrips.visible', true)
+	setProperty('mordodkd.visible', true)
+    setVis =false
 	setProperty('testlol.visible', true)
 	setProperty('boyfriend.color',getColorFromHex('FFFFFF'))
 	setProperty('dad.color',getColorFromHex('FFFFFF'))
@@ -126,4 +140,6 @@ if curStep == 272 then
 	setProperty('laflash.alpha',getColorFromHex('FFFFFF'))
 	setProperty('lahud.alpha',getColorFromHex('FFFFFF'))	
 end
+lastStep = curStep;
+	
 end
