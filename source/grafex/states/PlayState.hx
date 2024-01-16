@@ -7,7 +7,6 @@ import grafex.states.substates.LoadingState;
 import grafex.states.substates.GameplayChangersSubstate;
 import grafex.states.substates.PauseSubState;
 
-
 import grafex.systems.statesystem.MusicBeatState;
 import grafex.systems.song.Section.SwagSection;
 import grafex.systems.song.Song.SwagSong;
@@ -118,6 +117,7 @@ import openfl.filters.ColorMatrixFilter;
 
 import flixel.tweens.misc.VarTween;
 
+import utils.LuaFlxState;
 #if sys
 import sys.FileSystem;
 #end
@@ -137,8 +137,11 @@ import utils.Discord.DiscordClient;
 
 using StringTools;
 
-class PlayState extends MusicBeatState
+class PlayState extends MusicBeatState implements LuaFlxState
 {
+	private var isPlayState = true;
+
+
     var iconRPC:String = "";
 	public static var STRUM_X = 42;
 	public static var STRUM_X_MIDDLESCROLL = -278;
@@ -425,6 +428,10 @@ class PlayState extends MusicBeatState
 
 	// Lua shit
 	public static var instance:PlayState;
+	public static function curState():FlxState{
+		return PlayState.instance.isDead?grafex.states.substates.GameOverSubstate.instance:PlayState.instance;
+	};
+	
 	public var luaArray:Array<FunkinLua> = [];
 	private var luaDebugGroup:FlxTypedGroup<DebugLuaText>;
 	public var introSoundsSuffix:String = '';
@@ -468,7 +475,7 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		instance = this;
-        currentPState = this;
+		currentPState = this;
 
         setOnLuas('swapStrumLines', swapStrumLines);
 
@@ -778,7 +785,6 @@ class PlayState extends MusicBeatState
 				phillyWindow.updateHitbox();
 				add(phillyWindow);
 				phillyWindow.alpha = 0;
-
 
 				if(!ClientPrefs.lowQuality) {
 					var streetBehind:BGSprite = new BGSprite('philly/behindTrain', -40, 50);
@@ -2038,8 +2044,7 @@ class PlayState extends MusicBeatState
 		RecalculateRating();
 
 		//PRECACHING MISS SOUNDS BECAUSE I THINK THEY CAN LAG PEOPLE AND FUCK THEM UP IDK HOW HAXE WORKS
-		precacheList.set('missnote3', 'sound');
-		precacheList.set('missnote3', 'sound');
+
 		precacheList.set('missnote3', 'sound');
 		precacheList.set('breakfast', 'music');
         precacheList.set('note_click', 'sound');
@@ -2980,7 +2985,6 @@ class PlayState extends MusicBeatState
         TweenHandler(laneunderlayOpponent, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
         TweenHandler(laneunderlay, {alpha: ClientPrefs.underdelayalpha}, 0.5, {ease: FlxEase.quadOut});
 
-
         switch(curStage)
 		{
 			case 'tank':
@@ -3250,7 +3254,6 @@ class PlayState extends MusicBeatState
 				smoke.flipX = true;
 				dadbattleSmokes.add(smoke);
 
-
 		case 'Philly Glow':
 				blammedLightsBlack = new FlxSprite(FlxG.width * -0.5, FlxG.height * -0.5).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 				blammedLightsBlack.visible = false;
@@ -3261,7 +3264,6 @@ class PlayState extends MusicBeatState
 				phillyWindowEvent.updateHitbox();
 				phillyWindowEvent.visible = false;
 				insert(members.indexOf(blammedLightsBlack) + 1, phillyWindowEvent);
-
 
 				phillyGlowGradient = new PhillyGlowGradient(-400, 225); //This shit was refusing to properly load FlxGradient so fuck it
 				phillyGlowGradient.visible = false;
@@ -4093,7 +4095,7 @@ class PlayState extends MusicBeatState
 					timer.active = true;
 				}
 				if (!ClientPrefs.instantRespawn)
-					openSubState(new CNGameOverSubstate());
+					openSubState(new GameOverSubstate());
 				else
 					MusicBeatState.resetState();
 
@@ -4414,7 +4416,6 @@ class PlayState extends MusicBeatState
 					}
 				}
 
-
 			case 'Change Character':
 				var charType:Int = 0;
 				switch(value1) {
@@ -4551,8 +4552,7 @@ class PlayState extends MusicBeatState
 						setAlpha(boyfriendGroup, 1);
 						dumb_bitch = setAlpha(dumb_bitch, 1);
 						blck = setAlpha(blck, 0.0001); //This didn't exist
-						
-						
+
 				}
 
 			case 'john':
@@ -4982,7 +4982,6 @@ class PlayState extends MusicBeatState
 		rating.visible = (!ClientPrefs.hideHud && showRating);
 		rating.x += ClientPrefs.comboOffset[0];
 		rating.y -= ClientPrefs.comboOffset[1];
-
 
 		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
 		comboSpr.cameras = [camNOTEHUD];
@@ -6172,7 +6171,6 @@ class PlayState extends MusicBeatState
 	}
     public static var othersCodeName:String = 'otherAchievements';
 
-
 	var curLight:Int = -1;
 	var curLightEvent:Int = -1;
 
@@ -6450,8 +6448,7 @@ class PlayState extends MusicBeatState
 				video.play(fileName);
 				switch(endEvent)
 				{
-					
-					
+
 					case 'continue':
 						video.onEndReached.add(function()
 						{

@@ -58,8 +58,8 @@ import utils.Discord;
 using StringTools;
 
 class FunkinLua {
-	public static var Function_Stop:Dynamic = 1;
-	public static var Function_Continue:Dynamic = 0;
+public static var Function_Stop:Dynamic = 1;
+public static var Function_Continue:Dynamic = 0;
 public static var Function_StopLua:Dynamic = 2;
 
 public var errorHandler:String->Void;
@@ -68,7 +68,8 @@ public var errorHandler:String->Void;
 	#end
 	public var camTarget:FlxCamera;
 	public var scriptName:String = '';
-        public var closed:Bool = false;
+    public var closed:Bool = false;
+    
 	var gonnaClose:Bool = false;
 
 	public var accessedProps:Map<String, Dynamic> = null;
@@ -145,7 +146,7 @@ set('Function_StopLua', Function_StopLua);
 		set('curBeat', 0);
 		set('curStep', 0);
 
-set('curDecBeat', 0);
+		set('curDecBeat', 0);
 		set('curDecStep', 0);
 
 		set('score', 0);
