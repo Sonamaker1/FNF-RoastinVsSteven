@@ -1,3 +1,6 @@
+local ssize
+local color
+
 function onCreate()
 	makeLuaText('lyric','',screenWidth,0,600);
 	setTextSize('lyric',40);

@@ -15,5 +15,6 @@
 	"hide_girlfriend": false,
 	"directory": "",
 	"defaultZoom": 0.7,
-        "dynamic_camera": true
+    "dynamic_camera": true,
+    "camera_opponent": [0, 0]
 }
