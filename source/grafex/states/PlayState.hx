@@ -1859,11 +1859,11 @@ class PlayState extends MusicBeatState implements LuaFlxState
 			case 'Snapback':
 			    musician = 'JulianMOCs';
 			case 'Pancakes':
-			    musician = 'Pinezapples';
+			    musician = 'Bubby';
 			case 'Protest':
 			    musician = 'Propsnax';
 			case 'Nuisance':
-			    musician = 'Pinezapples';
+			    musician = 'Bubby';
 			case 'My Own Creation':
 			    musician = 'JulianMOCs';
 			case 'Racism':

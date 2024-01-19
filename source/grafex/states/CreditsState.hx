@@ -105,7 +105,7 @@ class CreditsState extends MusicBeatState
 			['Raymondvito',			'raymondvito',		'Musician',		                           	'https://www.youtube.com/@RaymondVito',			'9E29CF'],
 			['JulianMOCs',			'julian',			'Musician',		                            'https://twitter.com/JulianMOCs1',			    '9E29CF'],
 			['Propsnax',			'propsnax',			'Musician',	                                'https://twitter.com/Propsnax',			        'E1843A'],
-			['Pinezapples',		    'pinezapples',		'Musician',							        'https://twitter.com/Pinezapples',	            'DCD294'],
+			['Bubby',			    'bubby',			'Musician',							        'https://twitter.com/Pinezapples',	            'DCD294'],
 			['Saffron',				'saffron',			'Musician',			                        'https://www.youtube.com/@saikedemon',			'64A250'],
 			['Inoprishelenets',	    'ino',			    'Menu Theme Composer',						'https://www.youtube.com/@Inoprishelenets',		'7D40B2'],
 			['Frostic',				'frostic',			'BG Artist and Charter',					'https://twitter.com/FrimpleSchnips',		    '483D92'],
