@@ -1855,7 +1855,7 @@ class PlayState extends MusicBeatState implements LuaFlxState
 		switch(curSong)
 		{
 			case 'Roasted':
-			    musician = 'gero & CBag';
+			    musician = 'Raymondvito & CBag';
 			case 'Snapback':
 			    musician = 'JulianMOCs';
 			case 'Pancakes':
@@ -1867,7 +1867,7 @@ class PlayState extends MusicBeatState implements LuaFlxState
 			case 'My Own Creation':
 			    musician = 'JulianMOCs';
 			case 'Racism':
-			    musician = 'saike';
+			    musician = 'Saffron';
 			case 'Starlight':
 			    musician = 'Propsnax';
 			case 'Flan':
